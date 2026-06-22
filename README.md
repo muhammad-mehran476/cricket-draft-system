@@ -147,9 +147,3 @@ License Holder: Mehran Khan
 Phone: +92 3436782451
 Email: [mehrankhankhan476@gmail.com](mailto:mehrankhankhan476@gmail.com)
 
-
-If you want, I can also convert this into:
-
-README.md (GitHub-ready professional format)
-PDF documentation
-or a clean software license file (LICENSE.md)
