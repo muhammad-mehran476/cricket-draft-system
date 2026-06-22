@@ -113,3 +113,7 @@ routes/
 ## Notes
 - Default placeholder images (`images/default-player.png`, `images/default-team.png`) should be added to `public/images/` before going live, or swap the fallback URLs in `Player.php` / `Team.php`.
 - File uploads (photos, payment slips, logos) are stored on the `public` disk under `storage/app/public/...` and served via the `storage:link` symlink.
+=======
+# cricket-draft-system
+A Laravel-based Cricket Draft Management System
+>>>>>>> 5817ece78617455c35e3139f973ea34e11206927
