@@ -1,0 +1,95 @@
+/* ============================================================
+   CDCMS — Cricket Drafting Ceremony Management System
+   Global Custom CSS (loaded via <link> in layouts/app.blade.php)
+   ============================================================ */
+
+/* ── Scrollbar ───────────────────────────────────────────────*/
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #0d5c2f; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #073e1f; }
+
+/* ── Alert & flash ───────────────────────────────────────────*/
+.flash-bar {
+    position: fixed;
+    top: 72px;
+    right: 1.5rem;
+    z-index: 9999;
+    min-width: 320px;
+    animation: slideIn .3s ease;
+}
+@keyframes slideIn {
+    from { transform: translateX(110%); opacity: 0; }
+    to   { transform: translateX(0);   opacity: 1; }
+}
+
+/* ── Player card grid ────────────────────────────────────────*/
+.player-card {
+    border: 2px solid transparent;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+.player-card:hover {
+    border-color: #0d5c2f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(13,92,47,.15);
+}
+.player-card.selected {
+    border-color: #d4a017;
+    background: #fffbf0;
+}
+.player-card.disabled {
+    opacity: .45;
+    pointer-events: none;
+    filter: grayscale(60%);
+}
+
+/* ── Draft feed pulse ────────────────────────────────────────*/
+.feed-item-new {
+    animation: feedPulse .6s ease;
+}
+@keyframes feedPulse {
+    0%   { background: #d4edda; }
+    100% { background: #f8f9fa; }
+}
+
+/* ── Status pills ────────────────────────────────────────────*/
+.status-pending  { background: #fff3cd; color: #856404; }
+.status-approved { background: #d1e7dd; color: #0f5132; }
+.status-rejected { background: #f8d7da; color: #842029; }
+.status-drafted  { background: #cff4fc; color: #055160; }
+
+/* ── Category badge colours ──────────────────────────────────*/
+.cat-iconic   { background: #6f42c1; color: #fff; }
+.cat-platinum { background: #6c757d; color: #fff; }
+.cat-gold-bat { background: #d4a017; color: #1c2b25; }
+.cat-gold-bow { background: #c0392b; color: #fff; }
+.cat-allround { background: #0d5c2f; color: #fff; }
+.cat-emerging { background: #0b6efd; color: #fff; }
+
+/* ── Table improvements ──────────────────────────────────────*/
+.table-stadium tbody tr:hover { background: rgba(13,92,47,.04); }
+.table-stadium thead th { font-family: 'Oswald', sans-serif; letter-spacing: .3px; }
+
+/* ── Mobile tweaks ───────────────────────────────────────────*/
+@media (max-width: 767px) {
+    .stat-card { padding: 1rem; }
+    .timer-display { font-size: 2rem; }
+    .sidebar-admin { display: none; }
+}
+
+/* ── Draft turn animation ────────────────────────────────────*/
+.my-turn-glow {
+    box-shadow: 0 0 0 0 rgba(39,174,96,.7);
+    animation: turnGlow 1.5s infinite;
+}
+@keyframes turnGlow {
+    0%   { box-shadow: 0 0 0 0 rgba(39,174,96,.7); }
+    70%  { box-shadow: 0 0 0 14px rgba(39,174,96,0); }
+    100% { box-shadow: 0 0 0 0 rgba(39,174,96,0); }
+}
+
+/* ── Print ───────────────────────────────────────────────────*/
+@media print {
+    .sidebar-admin, .navbar-cdcms, footer { display: none !important; }
+    .card-stadium { box-shadow: none; border: 1px solid #ccc; }
+}
